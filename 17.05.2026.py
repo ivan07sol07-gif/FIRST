@@ -61,7 +61,18 @@ class WildAmimal(Animal):
 
         print(self.name, "Атакує")
 
-class Lion(WildAmimal):
+class Predator(WildAmimal):
+    def __init__(self , name , age , food):
+
+        super().__init__(name , age)
+
+        self.food = food
+
+    def attack(self):
+
+        print(self.name, "Атакує")
+
+class Lion(Predator):
 
     def __init__(self , name , age , danger):
 
@@ -73,7 +84,7 @@ class Lion(WildAmimal):
 
         print(self.name , "голосно ричить")
 
-class Tiger(WildAmimal):
+class Tiger(Predator):
 
     def __init__(self , name , age , danger):
 
@@ -85,7 +96,7 @@ class Tiger(WildAmimal):
 
         print(self.name , "голосно ричить")
 
-class Wolf(WildAmimal):
+class Wolf(Predator):
 
     def __init__(self , name , age , danger):
 
@@ -97,9 +108,46 @@ class Wolf(WildAmimal):
 
         print(self.name , "ричить")
 
+class HerbivorousAnimal(Animal):
+    def __init__(self , name , age , grass):
 
+        super().__init__(name , age)
 
+        self. grass =  grass
 
+    def attack(self):
+
+        print(self.name, "Атакує")
+
+class Wildebeest(HerbivorousAnimal):
+
+    def __init__(self , name , age , danger):
+
+        super().__init__(name , age , danger)
+
+    def run(self):
+
+        print(self.name , "біжить")
+
+class Hare(HerbivorousAnimal):
+
+    def __init__(self , name , age , danger):
+
+        super().__init__(name , age , danger)
+
+    def run(self):
+
+        print(self.name , "біжить")
+
+class Deer(HerbivorousAnimal):
+
+    def __init__(self , name , age , danger):
+
+        super().__init__(name , age , danger)
+
+    def run(self):
+
+        print(self.name , "біжить")
 
 print("Сила:" , cat.health)
 
